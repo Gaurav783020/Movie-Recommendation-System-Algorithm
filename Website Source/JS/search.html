@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="result"></div>
+
+<div id="infoStyle" class="col-lg-6 center-block infoWindow animated">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                <h4>First Name : <input id="fName" type="text" pattern="[A-Za-z]{50}" title="50 characters or less"></h4>
+                <h4>Last Name : <input id="lName" type="text" pattern="[A-Za-z]{50}" title="50 characters or less"></h4>
+                <h4>Email Address : <input id="email" type="email"></h4>
+                <br>
+                <a onclick="createStudent()" class="btn btn-info" role="button">Create Student</a>
+                <br><br>
+                <a onclick="cancel()" class="btn btn-danger" role="button">Cancel</a>
+             </div>
+<script>
+function createStudent(){
+
+
+    var newStudent = new Object();
+
+    newStudent .fName = document.getElementById('fName').value;
+    newStudent .lName = document.getElementById('lName').value;
+    newStudent .email = document.getElementById('email').value;
+
+    if(sessionStorage.student)
+    {
+     student= JSON.parse(sessionStorage.getItem('student'));
+    }else{
+     student=[];
+    }
+    student.push(newStudent )
+    sessionStorage.setItem('student', JSON.stringify(student));
+
+       // this is how you will retrive it
+
+    var retrievedObject = sessionStorage.getItem('student');
+    console.log('retrievedObject: ', JSON.parse(retrievedObject));
+
+for (let i = 0; i < sessionStorage.length; i++){
+  let key = sessionStorage.key(i);
+  let value = sessionStorage.getItem(key);
+	for(let x=0;x<value.length;x++){
+		let nii=value["fName"];
+	  console.log(key, nii);
+	}
+}
+}
+</script>
+
+</body>
+</html>

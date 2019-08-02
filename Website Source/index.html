@@ -1,0 +1,54 @@
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="CSS/bootstrap.min.css"> 
+  <link rel="stylesheet" type="text/css" href="CSS/style.css ">
+  <h1><title>React Movies</title></h1>
+<style>
+  * {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 3000px; 
+  opacity: 0.8;
+}
+
+</style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">MOVIE REVIEW</a>
+      </div></div>
+    </nav>
+    <div class="jumbotron">
+      <h3 class="text-center">Search</h3>
+      <form id="searchForm">
+        <input type="text" class="form-control" id="searchtext" placeholder="Search ">
+      </form></div>
+        
+<div id="container" style="width:100%;">                                   
+  <div class= "column"id="mov" style="float:left; width:30%;background-color:black;"></div>           
+  <div class="well" id="mat" style="float:right; width:70%;background-color:black;"></div>                   
+</div>    
+      <script
+  src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="JS/main.js"></script>
+  <script src="JS/search.js"></script>
+   <script>getMovie();</script>
+
+     
+</body>
+
+</html>
